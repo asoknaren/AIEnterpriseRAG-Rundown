@@ -26,6 +26,7 @@
 ### Phase 0: System Scaffolding & Specifications
 - [x] Create High-Level Design document ([specs/HIGH_LEVEL_DESIGN.md](specs/HIGH_LEVEL_DESIGN.md))
 - [x] Create Master Implementation Checklist ([specs/MASTER_CHECKLIST.md](specs/MASTER_CHECKLIST.md))
+- [x] Create Developer Setup & Build Guide ([specs/SETUP_GUIDE.md](specs/SETUP_GUIDE.md))
 - [x] Create Task-Based Checklists with Verification Gates:
   - [x] Project 1: [specs/01_doc_processor_checklist.md](specs/01_doc_processor_checklist.md)
   - [x] Project 2: [specs/02_ingestion_loader_checklist.md](specs/02_ingestion_loader_checklist.md)
