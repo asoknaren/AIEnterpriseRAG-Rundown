@@ -1,8 +1,8 @@
 # Enterprise RAG Platform: Master Progress & Implementation Checklist
 
 ## Overall Project Status
-- **Overall Status**: Not Started
-- **Current Phase**: Phase 0 - Specifications & Checklists Scaffolding
+- **Overall Status**: In-Progress
+- **Current Phase**: Phase 1 - Project 1 (Document Processor)
 - **Target Completion Date**: TBD
 - **Core Engineering Principle**: **Continuous Test & Verification Gates** — Every single task in each project requires building and executing automated unit/integration tests before progressing to the next step.
 
@@ -13,7 +13,7 @@
 | Project / Milestone | Status | Owner | Test Strategy | Test Coverage Target |
 | :--- | :--- | :--- | :--- | :--- |
 | **00. Platform Specifications & Architecture** | Complete | Platform Lead | Structural Validation | N/A |
-| **01. Document Processor (`01_doc_processor`)** | Not Started | Core Backend | Unit + Mock LLM + Fixtures | 90%+ |
+| **01. Document Processor (`01_doc_processor`)** | In-Progress | Core Backend | Unit + Mock LLM + Fixtures | 90%+ |
 | **02. Ingestion Loader (`02_ingestion_loader`)** | Not Started | Data Eng | Unit + Respx HTTP Mocks + CLI | 90%+ |
 | **03. Vector API Service (`03_vector_api_service`)** | Not Started | Backend / DB | Asyncpg SQL + ASGITransport + Mocks | 90%+ (No SQLAlchemy) |
 | **04. RAG Search UI (`04_rag_ui_search`)** | Not Started | Frontend / AI | Component Tests + Engine Mocks | 85%+ |
@@ -32,9 +32,10 @@
   - [x] Project 2: [specs/02_ingestion_loader_checklist.md](specs/02_ingestion_loader_checklist.md)
   - [x] Project 3: [specs/03_vector_api_service_checklist.md](specs/03_vector_api_service_checklist.md)
   - [x] Project 4: [specs/04_rag_ui_search_checklist.md](specs/04_rag_ui_search_checklist.md)
+- [x] Initialize Git repository structure with `.gitignore`, `docker-compose.yml`, and root environment template (`.env.example`)
 
 ### Phase 1: Project 1 - Document Processing & Artifact Generator (`01_doc_processor`)
-- [ ] Task 1.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)
+- [x] Task 1.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)
 - [ ] Task 1.2: Data Models & Lineage (`src/models/`) -> **Test Gate**: `tests/test_models.py` (Pass)
 - [ ] Task 1.3: Docling Parser (`src/parsers/`) -> **Test Gate**: `tests/test_parsers.py` (Pass)
 - [ ] Task 1.4: Chonkie Semantic Chunker (`src/chunkers/`) -> **Test Gate**: `tests/test_chunkers.py` (Pass)

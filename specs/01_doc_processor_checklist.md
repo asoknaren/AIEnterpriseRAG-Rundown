@@ -7,17 +7,17 @@
 ---
 
 ## 1. Environment & Project Scaffolding
-- [ ] Initialize `01_doc_processor/` directory structure (`src/`, `tests/`, `config/`)
-- [ ] Create `pyproject.toml` or `requirements.txt` with dependencies:
+- [x] Initialize `01_doc_processor/` directory structure (`src/`, `tests/`, `config/`)
+- [x] Create `pyproject.toml` or `requirements.txt` with dependencies:
   - `docling`
   - `chonkie`
   - `ollama` / `httpx`
   - `pydantic>=2.0`
   - `pytest`, `pytest-asyncio`, `pytest-mock`
-- [ ] Create `src/config.py` with Pydantic BaseSettings (Ollama host, default model names, chunk size, overlap limits)
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_config.py` to verify settings loading and environment overrides
-  - [ ] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
+- [x] Create `src/config.py` with Pydantic BaseSettings (Ollama host, default model names, chunk size, overlap limits)
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_config.py` to verify settings loading and environment overrides
+  - [x] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
 
 ## 2. Lineage & Envelope Data Models (`src/models/`)
 - [ ] Define `DocumentMetadata` model (`src/models/document.py`)
