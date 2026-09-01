@@ -29,12 +29,12 @@
   - [x] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
 
 ## 2. DTOs & Validation Schemas (`src/schemas/`)
-- [ ] Document request/response schemas (`src/schemas/document_dto.py`)
-- [ ] Chunk batch request/response schemas (`src/schemas/chunk_dto.py`)
-- [ ] Search query request and scored result response schemas (`src/schemas/search_dto.py`)
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_schemas.py` to validate payload structures, required fields, and serialization
-  - [ ] Run `pytest tests/test_schemas.py` and ensure 100% pass before proceeding
+- [x] Document request/response schemas (`src/schemas/document_dto.py`)
+- [x] Chunk batch request/response schemas (`src/schemas/chunk_dto.py`)
+- [x] Search query request and scored result response schemas (`src/schemas/search_dto.py`)
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_schemas.py` to validate payload structures, required fields, and serialization
+  - [x] Run `pytest tests/test_schemas.py` and ensure 100% pass before proceeding
 
 ## 3. Database Layer - Strictly NO SQLAlchemy (`src/db/`)
 - [ ] Define abstract `BaseVectorRepository` in `src/db/base.py`
