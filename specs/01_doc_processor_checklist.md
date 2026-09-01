@@ -42,14 +42,14 @@
   - [x] Run `pytest tests/test_parsers.py` and ensure 100% pass before proceeding
 
 ## 4. Semantic Chunker Implementation (`src/chunkers/`)
-- [ ] Define `BaseChunker` abstract interface in `src/chunkers/base.py`
-- [ ] Implement `SemanticChunker` in `src/chunkers/semantic_chunker.py` using `chonkie`:
-  - [ ] Configure semantic sentence boundary thresholds
-  - [ ] Preserve heading breadcrumbs (`# Header 1 > ## Subheader 2`)
-  - [ ] Maintain character / token offset pointers to source Markdown
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_chunkers.py` to test boundary splitting, token boundaries, and header lineage retention
-  - [ ] Run `pytest tests/test_chunkers.py` and ensure 100% pass before proceeding
+- [x] Define `BaseChunker` abstract interface in `src/chunkers/base.py`
+- [x] Implement `SemanticChunker` in `src/chunkers/semantic_chunker.py` using `chonkie`:
+  - [x] Configure semantic sentence boundary thresholds
+  - [x] Preserve heading breadcrumbs (`# Header 1 > ## Subheader 2`)
+  - [x] Maintain character / token offset pointers to source Markdown
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_chunkers.py` to test boundary splitting, token boundaries, and header lineage retention
+  - [x] Run `pytest tests/test_chunkers.py` and ensure 100% pass before proceeding
 
 ## 5. Derivative Artifact Generators (`src/generators/`)
 - [ ] Implement Ollama client wrapper with fallback model handling
