@@ -80,7 +80,7 @@
   - [x] Run `pytest tests/test_pipeline.py` and ensure 100% pass before proceeding
 
 ## 7. Project 1 Final Quality Gate
-- [ ] Run full project test suite: `pytest --cov=src tests/`
-- [ ] Verify test coverage >= 90%
-- [ ] Verify code formatting and linting (`ruff` / `mypy`)
-- [ ] Document README with usage instructions and sample output artifacts
+- [x] Run full project test suite: `pytest --cov=src tests/`
+- [x] Verify test coverage >= 90%
+- [x] Verify code formatting and linting (`ruff` / `mypy`)
+- [x] Document README with usage instructions and sample output artifacts

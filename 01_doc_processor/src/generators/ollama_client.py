@@ -41,6 +41,6 @@ class OllamaGeneratorClient:
             try:
                 response = client.generate(model=candidate, prompt=prompt, stream=False, format="json" if json_mode else None)
                 return response.response
-            except Exception as error:
+            except Exception as error:  # noqa: BLE001
                 last_error = error
         raise RuntimeError("Ollama generation failed for all configured models") from last_error

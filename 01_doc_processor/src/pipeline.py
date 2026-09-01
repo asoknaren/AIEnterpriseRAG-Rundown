@@ -1,13 +1,20 @@
 """End-to-end document processing and JSONL artifact output."""
 
 import json
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import Future, ThreadPoolExecutor
 from pathlib import Path
+from typing import cast
 
 from src.chunkers import BaseChunker, SemanticChunker
-from src.generators import ContextualChunkGenerator, FactoidGenerator, QAPairGenerator, RaptorGenerator, SummaryGenerator
+from src.generators import (
+    ContextualChunkGenerator,
+    FactoidGenerator,
+    QAPairGenerator,
+    RaptorGenerator,
+    SummaryGenerator,
+)
 from src.generators.ollama_client import OllamaGeneratorClient
-from src.models import ArtifactType, Chunk, LineageEnvelope
+from src.models import Chunk, LineageEnvelope
 from src.parsers import BaseParser, DoclingParser, ParsedDocument
 
 
@@ -43,14 +50,14 @@ class DocumentProcessorPipeline:
 
         artifacts: list[Chunk] = [summary, *leaf_chunks, *raptor_parents]
         with ThreadPoolExecutor() as executor:
-            futures = []
+            futures: list[Future[Chunk | list[Chunk]]] = []
             for chunk in leaf_chunks:
                 futures.extend(
-                    [
-                        executor.submit(self._contextual_generator.generate, summary.content, chunk),
-                        executor.submit(self._qa_generator.generate, chunk),
-                        executor.submit(self._factoid_generator.generate, chunk),
-                    ]
+                    (
+                        cast(Future[Chunk | list[Chunk]], executor.submit(self._contextual_generator.generate, summary.content, chunk)),
+                        cast(Future[Chunk | list[Chunk]], executor.submit(self._qa_generator.generate, chunk)),
+                        cast(Future[Chunk | list[Chunk]], executor.submit(self._factoid_generator.generate, chunk)),
+                    )
                 )
             for future in futures:
                 result = future.result()

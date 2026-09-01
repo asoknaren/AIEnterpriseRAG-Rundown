@@ -1,6 +1,6 @@
 """Document-level metadata and integrity helpers."""
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
 from uuid import UUID, uuid4
@@ -18,7 +18,7 @@ class DocumentMetadata(BaseModel):
     sha256_hash: str = Field(min_length=64, max_length=64, pattern=r"^[a-fA-F0-9]{64}$")
     total_pages: int = Field(default=1, ge=1)
     metadata: dict[str, object] = Field(default_factory=dict)
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     @staticmethod
     def calculate_sha256(content: bytes) -> str:

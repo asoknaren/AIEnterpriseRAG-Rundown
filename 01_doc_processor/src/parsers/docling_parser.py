@@ -2,7 +2,7 @@
 
 from collections.abc import Callable
 from pathlib import Path
-from typing import Any
+from typing import Any, ClassVar
 
 from src.models import DocumentMetadata
 
@@ -12,8 +12,8 @@ from .base import BaseParser, ParsedDocument
 class DoclingParser(BaseParser):
     """Convert supported documents to Markdown while retaining source metadata."""
 
-    _DOCLING_EXTENSIONS = {".pdf", ".doc", ".docx", ".html", ".htm"}
-    _TEXT_EXTENSIONS = {".txt"}
+    _DOCLING_EXTENSIONS: ClassVar[set[str]] = {".pdf", ".doc", ".docx", ".html", ".htm"}
+    _TEXT_EXTENSIONS: ClassVar[set[str]] = {".txt"}
 
     def __init__(self, converter_factory: Callable[[], Any] | None = None) -> None:
         self._converter_factory = converter_factory or self._create_converter

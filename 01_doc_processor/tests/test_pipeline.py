@@ -2,7 +2,6 @@
 
 import json
 from pathlib import Path
-from uuid import uuid4
 
 from src.models import ArtifactType, Chunk, DocumentMetadata
 from src.parsers import ParsedDocument

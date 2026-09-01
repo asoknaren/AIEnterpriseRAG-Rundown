@@ -1,7 +1,6 @@
 """Lightweight two-tier RAPTOR summary generation."""
 
 from itertools import batched
-from uuid import uuid4
 
 from src.models import ArtifactType, Chunk
 

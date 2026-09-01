@@ -1,7 +1,8 @@
 """Tests for Document Processor configuration settings."""
 
-import os
 import pytest
+from pydantic import ValidationError
+
 from src.config import ProcessorSettings
 
 
@@ -34,10 +35,10 @@ def test_custom_environment_overrides(monkeypatch):
 
 def test_validation_constraints():
     """Verify validation boundaries."""
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         # chunk_size below minimum boundary of 64
         ProcessorSettings(chunk_size=10)
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         # similarity_threshold above 1.0
         ProcessorSettings(similarity_threshold=1.5)

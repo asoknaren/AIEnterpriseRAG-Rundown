@@ -2,7 +2,7 @@
 
 ## Overall Project Status
 - **Overall Status**: In-Progress
-- **Current Phase**: Phase 1 - Project 1 (Document Processor)
+- **Current Phase**: Phase 2 - Project 3 (Vector API Service)
 - **Target Completion Date**: TBD
 - **Core Engineering Principle**: **Continuous Test & Verification Gates** — Every single task in each project requires building and executing automated unit/integration tests before progressing to the next step.
 
@@ -13,7 +13,7 @@
 | Project / Milestone | Status | Owner | Test Strategy | Test Coverage Target |
 | :--- | :--- | :--- | :--- | :--- |
 | **00. Platform Specifications & Architecture** | Complete | Platform Lead | Structural Validation | N/A |
-| **01. Document Processor (`01_doc_processor`)** | In-Progress | Core Backend | Unit + Mock LLM + Fixtures | 90%+ |
+| **01. Document Processor (`01_doc_processor`)** | Complete | Core Backend | Unit + Mock LLM + Fixtures | 90%+ |
 | **02. Ingestion Loader (`02_ingestion_loader`)** | Not Started | Data Eng | Unit + Respx HTTP Mocks + CLI | 90%+ |
 | **03. Vector API Service (`03_vector_api_service`)** | Not Started | Backend / DB | Asyncpg SQL + ASGITransport + Mocks | 90%+ (No SQLAlchemy) |
 | **04. RAG Search UI (`04_rag_ui_search`)** | Not Started | Frontend / AI | Component Tests + Engine Mocks | 85%+ |
@@ -41,7 +41,7 @@
 - [x] Task 1.4: Chonkie Semantic Chunker (`src/chunkers/`) -> **Test Gate**: `tests/test_chunkers.py` (Pass)
 - [x] Task 1.5: Ollama Derivative Generators (`src/generators/`) -> **Test Gate**: `tests/test_generators.py` (Pass)
 - [x] Task 1.6: Pipeline Orchestrator (`src/pipeline.py`) -> **Test Gate**: `tests/test_pipeline.py` (Pass)
-- [ ] Quality Gate: `pytest --cov=src tests/` >= 90% pass
+- [x] Quality Gate: `pytest --cov=src tests/` >= 90% pass
 
 ### Phase 2: Project 3 - Vector Storage & CRUD FastAPI (`03_vector_api_service`)
 - [ ] Task 3.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)

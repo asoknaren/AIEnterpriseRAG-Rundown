@@ -3,7 +3,15 @@
 from types import SimpleNamespace
 from uuid import uuid4
 
-from src.generators import ContextualChunkGenerator, FactoidGenerator, QAPairGenerator, RaptorGenerator, SummaryGenerator
+import pytest
+
+from src.generators import (
+    ContextualChunkGenerator,
+    FactoidGenerator,
+    QAPairGenerator,
+    RaptorGenerator,
+    SummaryGenerator,
+)
 from src.generators.ollama_client import OllamaGeneratorClient
 from src.models import ArtifactType, Chunk
 
@@ -68,5 +76,5 @@ def test_qa_and_factoid_generators_parse_json_artifacts():
 
 def test_qa_generator_rejects_an_invalid_pair_count():
     client, _ = client_with('[]')
-    with __import__("pytest").raises(ValueError, match="between 3 and 5"):
+    with pytest.raises(ValueError, match="between 3 and 5"):
         QAPairGenerator(client).generate(Chunk(doc_id=uuid4(), content="Source text"))

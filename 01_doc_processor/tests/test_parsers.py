@@ -1,6 +1,7 @@
 """Tests for the Docling document parser."""
 
 from pathlib import Path
+from typing import ClassVar
 
 import pytest
 
@@ -10,7 +11,7 @@ from src.parsers import DoclingParser
 class FakeDocument:
     """Minimal Docling document stand-in for conversion boundary tests."""
 
-    pages = {1: object(), 2: object()}
+    pages: ClassVar[dict[int, object]] = {1: object(), 2: object()}
 
     def export_to_markdown(self) -> str:
         return "# Revenue\n\n| Region | Growth |\n| --- | --- |\n| APAC | 14% |"
