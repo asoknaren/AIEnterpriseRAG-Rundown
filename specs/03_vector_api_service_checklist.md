@@ -8,8 +8,8 @@
 ---
 
 ## 1. Environment & Project Scaffolding
-- [ ] Initialize `03_vector_api_service/` directory structure (`src/`, `tests/`)
-- [ ] Create `pyproject.toml` or `requirements.txt` with dependencies:
+- [x] Initialize `03_vector_api_service/` directory structure (`src/`, `tests/`)
+- [x] Create `pyproject.toml` or `requirements.txt` with dependencies:
   - `fastapi>=0.110.0`
   - `uvicorn[standard]>=0.28.0`
   - `asyncpg>=0.29.0` (PostgreSQL driver)
@@ -19,14 +19,14 @@
   - `pydantic-settings>=2.0`
   - `ollama` / `fastembed` / `openai`
   - `pytest`, `pytest-asyncio`, `httpx`
-- [ ] Create `src/config.py` with Pydantic BaseSettings:
+- [x] Create `src/config.py` with Pydantic BaseSettings:
   - Database backend toggle: `VECTOR_DB_BACKEND` (`postgres` | `qdrant`)
   - PostgreSQL connection parameters (host, port, user, password, db, pool sizes)
   - Qdrant connection parameters (URL, API key, collection name)
   - Embedding provider settings: `EMBEDDING_PROVIDER` (`ollama` | `fastembed` | `openai`)
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_config.py` to test environment parsing and validation
-  - [ ] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_config.py` to test environment parsing and validation
+  - [x] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
 
 ## 2. DTOs & Validation Schemas (`src/schemas/`)
 - [ ] Document request/response schemas (`src/schemas/document_dto.py`)

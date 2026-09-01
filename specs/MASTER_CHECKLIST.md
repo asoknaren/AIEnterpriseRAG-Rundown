@@ -15,7 +15,7 @@
 | **00. Platform Specifications & Architecture** | Complete | Platform Lead | Structural Validation | N/A |
 | **01. Document Processor (`01_doc_processor`)** | Complete | Core Backend | Unit + Mock LLM + Fixtures | 90%+ |
 | **02. Ingestion Loader (`02_ingestion_loader`)** | Not Started | Data Eng | Unit + Respx HTTP Mocks + CLI | 90%+ |
-| **03. Vector API Service (`03_vector_api_service`)** | Not Started | Backend / DB | Asyncpg SQL + ASGITransport + Mocks | 90%+ (No SQLAlchemy) |
+| **03. Vector API Service (`03_vector_api_service`)** | In-Progress | Backend / DB | Asyncpg SQL + ASGITransport + Mocks | 90%+ (No SQLAlchemy) |
 | **04. RAG Search UI (`04_rag_ui_search`)** | Not Started | Frontend / AI | Component Tests + Engine Mocks | 85%+ |
 | **05. End-to-End System Integration & Testing** | Not Started | QA / All | Full E2E Pipeline Runs | 100% Path Coverage |
 
@@ -44,7 +44,7 @@
 - [x] Quality Gate: `pytest --cov=src tests/` >= 90% pass
 
 ### Phase 2: Project 3 - Vector Storage & CRUD FastAPI (`03_vector_api_service`)
-- [ ] Task 3.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)
+- [x] Task 3.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)
 - [ ] Task 3.2: DTOs & Validation Schemas (`src/schemas/`) -> **Test Gate**: `tests/test_schemas.py` (Pass)
 - [ ] Task 3.3: Database Repositories (asyncpg / Qdrant) -> **Test Gate**: `tests/test_db_*.py` + `tests/test_architecture_rules.py` (No SQLAlchemy) (Pass)
 - [ ] Task 3.4: Embedding Factory (`src/embeddings/`) -> **Test Gate**: `tests/test_embeddings.py` (Pass)
