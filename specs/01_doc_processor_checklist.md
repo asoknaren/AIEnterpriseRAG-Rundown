@@ -69,15 +69,15 @@
   - [x] Run `pytest tests/test_generators.py` and ensure 100% pass before proceeding
 
 ## 6. End-to-End Processing Pipeline (`src/pipeline.py`)
-- [ ] Create `DocumentProcessorPipeline` orchestration class:
-  - [ ] Read input document file
-  - [ ] Execute Docling parser -> Markdown
-  - [ ] Execute Chonkie chunker -> Semantic Chunks
-  - [ ] Trigger Ollama generators concurrently for derivative artifacts
-  - [ ] Assemble standardized JSON/JSONL output payload
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_pipeline.py` testing complete flow from raw document to final enriched artifact envelope
-  - [ ] Run `pytest tests/test_pipeline.py` and ensure 100% pass before proceeding
+- [x] Create `DocumentProcessorPipeline` orchestration class:
+  - [x] Read input document file
+  - [x] Execute Docling parser -> Markdown
+  - [x] Execute Chonkie chunker -> Semantic Chunks
+  - [x] Trigger Ollama generators concurrently for derivative artifacts
+  - [x] Assemble standardized JSON/JSONL output payload
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_pipeline.py` testing complete flow from raw document to final enriched artifact envelope
+  - [x] Run `pytest tests/test_pipeline.py` and ensure 100% pass before proceeding
 
 ## 7. Project 1 Final Quality Gate
 - [ ] Run full project test suite: `pytest --cov=src tests/`

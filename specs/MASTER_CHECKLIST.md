@@ -40,7 +40,7 @@
 - [x] Task 1.3: Docling Parser (`src/parsers/`) -> **Test Gate**: `tests/test_parsers.py` (Pass)
 - [x] Task 1.4: Chonkie Semantic Chunker (`src/chunkers/`) -> **Test Gate**: `tests/test_chunkers.py` (Pass)
 - [x] Task 1.5: Ollama Derivative Generators (`src/generators/`) -> **Test Gate**: `tests/test_generators.py` (Pass)
-- [ ] Task 1.6: Pipeline Orchestrator (`src/pipeline.py`) -> **Test Gate**: `tests/test_pipeline.py` (Pass)
+- [x] Task 1.6: Pipeline Orchestrator (`src/pipeline.py`) -> **Test Gate**: `tests/test_pipeline.py` (Pass)
 - [ ] Quality Gate: `pytest --cov=src tests/` >= 90% pass
 
 ### Phase 2: Project 3 - Vector Storage & CRUD FastAPI (`03_vector_api_service`)
