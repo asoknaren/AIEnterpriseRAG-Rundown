@@ -52,21 +52,21 @@
   - [x] Run `pytest tests/test_chunkers.py` and ensure 100% pass before proceeding
 
 ## 5. Derivative Artifact Generators (`src/generators/`)
-- [ ] Implement Ollama client wrapper with fallback model handling
-- [ ] Implement **Contextual Chunk Generator** (`src/generators/contextual_generator.py`):
-  - [ ] Prompt LLM with full document summary + chunk to generate a situational context prefix
-- [ ] Implement **Summary Generator** (`src/generators/summary_generator.py`):
-  - [ ] Generate whole-document executive summary & section-level summaries
-- [ ] Implement **RAPTOR 2-Tier Hierarchical Generator** (`src/generators/raptor_generator.py`):
-  - [ ] Group adjacent/topical semantic chunks into clusters
-  - [ ] Synthesize parent summary nodes linking directly to child `chunk_id`s
-- [ ] Implement **QA Pair Generator** (`src/generators/qa_generator.py`):
-  - [ ] Generate 3-5 diverse synthetic question-answer pairs per chunk
-- [ ] Implement **Factoid Generator** (`src/generators/factoid_generator.py`):
-  - [ ] Extract atomic factual statements and key named entities
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_generators.py` using mock LLM responses to test all 5 artifact generators and prompt parsing
-  - [ ] Run `pytest tests/test_generators.py` and ensure 100% pass before proceeding
+- [x] Implement Ollama client wrapper with fallback model handling
+- [x] Implement **Contextual Chunk Generator** (`src/generators/contextual_generator.py`):
+  - [x] Prompt LLM with full document summary + chunk to generate a situational context prefix
+- [x] Implement **Summary Generator** (`src/generators/summary_generator.py`):
+  - [x] Generate whole-document executive summary & section-level summaries
+- [x] Implement **RAPTOR 2-Tier Hierarchical Generator** (`src/generators/raptor_generator.py`):
+  - [x] Group adjacent/topical semantic chunks into clusters
+  - [x] Synthesize parent summary nodes linking directly to child `chunk_id`s
+- [x] Implement **QA Pair Generator** (`src/generators/qa_generator.py`):
+  - [x] Generate 3-5 diverse synthetic question-answer pairs per chunk
+- [x] Implement **Factoid Generator** (`src/generators/factoid_generator.py`):
+  - [x] Extract atomic factual statements and key named entities
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_generators.py` using mock LLM responses to test all 5 artifact generators and prompt parsing
+  - [x] Run `pytest tests/test_generators.py` and ensure 100% pass before proceeding
 
 ## 6. End-to-End Processing Pipeline (`src/pipeline.py`)
 - [ ] Create `DocumentProcessorPipeline` orchestration class:
