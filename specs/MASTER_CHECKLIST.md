@@ -36,8 +36,8 @@
 
 ### Phase 1: Project 1 - Document Processing & Artifact Generator (`01_doc_processor`)
 - [x] Task 1.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)
-- [ ] Task 1.2: Data Models & Lineage (`src/models/`) -> **Test Gate**: `tests/test_models.py` (Pass)
-- [ ] Task 1.3: Docling Parser (`src/parsers/`) -> **Test Gate**: `tests/test_parsers.py` (Pass)
+- [x] Task 1.2: Data Models & Lineage (`src/models/`) -> **Test Gate**: `tests/test_models.py` (Pass)
+- [x] Task 1.3: Docling Parser (`src/parsers/`) -> **Test Gate**: `tests/test_parsers.py` (Pass)
 - [ ] Task 1.4: Chonkie Semantic Chunker (`src/chunkers/`) -> **Test Gate**: `tests/test_chunkers.py` (Pass)
 - [ ] Task 1.5: Ollama Derivative Generators (`src/generators/`) -> **Test Gate**: `tests/test_generators.py` (Pass)
 - [ ] Task 1.6: Pipeline Orchestrator (`src/pipeline.py`) -> **Test Gate**: `tests/test_pipeline.py` (Pass)

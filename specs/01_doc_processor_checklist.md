@@ -20,26 +20,26 @@
   - [x] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
 
 ## 2. Lineage & Envelope Data Models (`src/models/`)
-- [ ] Define `DocumentMetadata` model (`src/models/document.py`)
-- [ ] Define `Chunk` & `ArtifactType` Enum (`src/models/chunk.py`)
-- [ ] Define `LineageEnvelope` model (`src/models/lineage.py`) linking `doc_id`, `chunk_id`, `parent_chunk_id`, and `artifact_type`
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_models.py` to validate schema serialization, SHA256 hashing, and parent-child UUID integrity
-  - [ ] Run `pytest tests/test_models.py` and ensure 100% pass before proceeding
+- [x] Define `DocumentMetadata` model (`src/models/document.py`)
+- [x] Define `Chunk` & `ArtifactType` Enum (`src/models/chunk.py`)
+- [x] Define `LineageEnvelope` model (`src/models/lineage.py`) linking `doc_id`, `chunk_id`, `parent_chunk_id`, and `artifact_type`
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_models.py` to validate schema serialization, SHA256 hashing, and parent-child UUID integrity
+  - [x] Run `pytest tests/test_models.py` and ensure 100% pass before proceeding
 
 ## 3. Document Parser Implementation (`src/parsers/`)
-- [ ] Define `BaseParser` abstract interface in `src/parsers/base.py`
-- [ ] Implement `DoclingParser` in `src/parsers/docling_parser.py`:
-  - [ ] Support PDF files (with layout analysis & OCR)
-  - [ ] Support DOCX / DOC files
-  - [ ] Support HTML files (strip boilerplate, retain content hierarchy)
-  - [ ] Support TXT files
-  - [ ] Convert parsed AST to clean Markdown representation
-  - [ ] Extract document metadata (title, page count, file size, SHA256 checksum)
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_parsers.py` with sample test fixtures (sample PDF, HTML, DOCX, TXT)
-  - [ ] Verify table, header, and metadata extraction accuracy
-  - [ ] Run `pytest tests/test_parsers.py` and ensure 100% pass before proceeding
+- [x] Define `BaseParser` abstract interface in `src/parsers/base.py`
+- [x] Implement `DoclingParser` in `src/parsers/docling_parser.py`:
+  - [x] Support PDF files (with layout analysis & OCR)
+  - [x] Support DOCX / DOC files
+  - [x] Support HTML files (strip boilerplate, retain content hierarchy)
+  - [x] Support TXT files
+  - [x] Convert parsed AST to clean Markdown representation
+  - [x] Extract document metadata (title, page count, file size, SHA256 checksum)
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_parsers.py` with sample test fixtures (sample PDF, HTML, DOCX, TXT)
+  - [x] Verify table, header, and metadata extraction accuracy
+  - [x] Run `pytest tests/test_parsers.py` and ensure 100% pass before proceeding
 
 ## 4. Semantic Chunker Implementation (`src/chunkers/`)
 - [ ] Define `BaseChunker` abstract interface in `src/chunkers/base.py`
