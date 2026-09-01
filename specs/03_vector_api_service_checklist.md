@@ -37,29 +37,29 @@
   - [x] Run `pytest tests/test_schemas.py` and ensure 100% pass before proceeding
 
 ## 3. Database Layer - Strictly NO SQLAlchemy (`src/db/`)
-- [ ] Define abstract `BaseVectorRepository` in `src/db/base.py`
-- [ ] Implement **PostgreSQL (`asyncpg` + `pgvector`)** repository (`src/db/postgres/`):
-  - [ ] Connection pool manager in `src/db/postgres/connection.py`
-  - [ ] Schema DDL script in `src/db/postgres/schema.sql`:
+- [x] Define abstract `BaseVectorRepository` in `src/db/base.py`
+- [x] Implement **PostgreSQL (`asyncpg` + `pgvector`)** repository (`src/db/postgres/`):
+  - [x] Connection pool manager in `src/db/postgres/connection.py`
+  - [x] Schema DDL script in `src/db/postgres/schema.sql`:
     - Enable `vector` and `uuid-ossp` extensions
     - `documents` table
     - `document_chunks` table with `vector(dim)` column
     - HNSW index on `document_chunks.embedding` using `vector_cosine_ops`
     - Foreign keys with `ON DELETE CASCADE`
-  - [ ] Repository queries in `src/db/postgres/repository.py` using direct `asyncpg` raw parameterized SQL:
+  - [x] Repository queries in `src/db/postgres/repository.py` using direct `asyncpg` raw parameterized SQL:
     - `create_document()`, `get_document()`, `delete_document()`, `get_document_by_hash()`
     - `insert_chunks_batch()`, `delete_chunks_by_doc()`
     - `search_similar_chunks()` (Cosine similarity with SQL `ORDER BY embedding <=> $1 LIMIT $2`)
-- [ ] Implement **Qdrant** repository (`src/db/qdrant/`):
-  - [ ] Client connection manager in `src/db/qdrant/connection.py`
-  - [ ] Collection initializer with cosine distance in `src/db/qdrant/schema.py`
-  - [ ] Repository implementation in `src/db/qdrant/repository.py` using `AsyncQdrantClient`
-- [ ] Implement `RepositoryFactory` in `src/db/factory.py` to resolve backend dynamically
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_db_postgres.py` with mock/test asyncpg connection pool to test raw SQL execution and cascade logic
-  - [ ] Write `tests/test_db_qdrant.py` with mock Qdrant client to test collection queries and vector filters
-  - [ ] Write `tests/test_architecture_rules.py` asserting no imports or dependencies on `sqlalchemy` exist in `src/`
-  - [ ] Run `pytest tests/test_db_*.py tests/test_architecture_rules.py` and ensure 100% pass before proceeding
+- [x] Implement **Qdrant** repository (`src/db/qdrant/`):
+  - [x] Client connection manager in `src/db/qdrant/connection.py`
+  - [x] Collection initializer with cosine distance in `src/db/qdrant/schema.py`
+  - [x] Repository implementation in `src/db/qdrant/repository.py` using `AsyncQdrantClient`
+- [x] Implement `RepositoryFactory` in `src/db/factory.py` to resolve backend dynamically
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_db_postgres.py` with mock/test asyncpg connection pool to test raw SQL execution and cascade logic
+  - [x] Write `tests/test_db_qdrant.py` with mock Qdrant client to test collection queries and vector filters
+  - [x] Write `tests/test_architecture_rules.py` asserting no imports or dependencies on `sqlalchemy` exist in `src/`
+  - [x] Run `pytest tests/test_db_*.py tests/test_architecture_rules.py` and ensure 100% pass before proceeding
 
 ## 4. Embedding Engine Layer (`src/embeddings/`)
 - [ ] Define `BaseEmbeddingService` abstract interface in `src/embeddings/base.py`
