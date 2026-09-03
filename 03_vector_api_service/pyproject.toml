@@ -35,3 +35,9 @@ dev = [
 asyncio_mode = "auto"
 testpaths = ["tests"]
 pythonpath = ["."]
+
+[tool.ruff.lint]
+ignore = ["B008"]
+
+[tool.mypy]
+ignore_missing_imports = true

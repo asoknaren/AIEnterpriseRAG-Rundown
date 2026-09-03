@@ -5,7 +5,13 @@ from typing import Any
 from uuid import UUID
 
 from src.db.base import BaseVectorRepository
-from src.schemas import ChunkCreate, DocumentCreate, DocumentResponse, SearchQuery, SearchResult
+from src.schemas import (
+    ChunkCreate,
+    DocumentCreate,
+    DocumentResponse,
+    SearchQuery,
+    SearchResult,
+)
 
 
 class PostgresVectorRepository(BaseVectorRepository):

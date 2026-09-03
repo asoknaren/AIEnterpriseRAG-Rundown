@@ -48,8 +48,8 @@
 - [x] Task 3.2: DTOs & Validation Schemas (`src/schemas/`) -> **Test Gate**: `tests/test_schemas.py` (Pass)
 - [x] Task 3.3: Database Repositories (asyncpg / Qdrant) -> **Test Gate**: `tests/test_db_*.py` + `tests/test_architecture_rules.py` (No SQLAlchemy) (Pass)
 - [x] Task 3.4: Embedding Factory (`src/embeddings/`) -> **Test Gate**: `tests/test_embeddings.py` (Pass)
-- [ ] Task 3.5: FastAPI REST Routers (`src/api/v1/`) -> **Test Gate**: `tests/test_api_v1.py` (Pass)
-- [ ] Quality Gate: `pytest --cov=src tests/` >= 90% pass
+- [x] Task 3.5: FastAPI REST Routers (`src/api/v1/`) -> **Test Gate**: `tests/test_api_v1.py` (Pass)
+- [x] Quality Gate: `pytest --cov=src tests/` >= 90% pass (verified: 92%; Ruff and mypy pass)
 
 ### Phase 3: Project 2 - Ingestion Loader (`02_ingestion_loader`)
 - [ ] Task 2.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)

@@ -72,24 +72,24 @@
   - [x] Run `pytest tests/test_embeddings.py` and ensure 100% pass before proceeding
 
 ## 5. FastAPI REST API Routers (`src/api/`)
-- [ ] Implement **Document Endpoints** (`src/api/v1/documents.py`):
+- [x] Implement **Document Endpoints** (`src/api/v1/documents.py`):
   - `POST /api/v1/documents` -> Register document & metadata
   - `GET /api/v1/documents/{doc_id}` -> Retrieve document with chunks
   - `DELETE /api/v1/documents/{doc_id}` -> Cascade delete document & vectors
   - `GET /api/v1/documents/by-hash/{sha256}` -> Check existence by checksum
-- [ ] Implement **Chunk Ingestion Endpoints** (`src/api/v1/chunks.py`):
+- [x] Implement **Chunk Ingestion Endpoints** (`src/api/v1/chunks.py`):
   - `POST /api/v1/chunks/batch` -> Compute embeddings (if not supplied) and insert chunks
-- [ ] Implement **Search Endpoints** (`src/api/v1/search.py`):
+- [x] Implement **Search Endpoints** (`src/api/v1/search.py`):
   - `POST /api/v1/search` -> Similarity search with filters: `artifact_type`, `doc_id`, `score_threshold`, `top_k`
-- [ ] Implement **Health Endpoint** (`src/api/v1/health.py`):
+- [x] Implement **Health Endpoint** (`src/api/v1/health.py`):
   - `GET /api/v1/health` -> Check API and DB connection pool status
-- [ ] Set up lifespan context manager for graceful startup/shutdown of DB pools in `src/main.py`
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_api_v1.py` using `httpx.AsyncClient` & `ASGITransport` to test all CRUD and search routes
-  - [ ] Run `pytest tests/test_api_v1.py` and ensure 100% pass before proceeding
+- [x] Set up lifespan context manager for graceful startup/shutdown of DB pools in `src/main.py`
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_api_v1.py` using `httpx.AsyncClient` & `ASGITransport` to test all CRUD and search routes
+  - [x] Run `pytest tests/test_api_v1.py` and ensure 100% pass before proceeding
 
 ## 6. Project 3 Final Quality Gate
-- [ ] Run full project test suite: `pytest --cov=src tests/`
-- [ ] Verify test coverage >= 90%
-- [ ] Verify code formatting and linting (`ruff` / `mypy`)
-- [ ] Document README with API specs, OpenAPI schema, and database setup instructions
+- [x] Run full project test suite: `pytest --cov=src tests/`
+- [x] Verify test coverage >= 90% (verified: 92%)
+- [x] Verify code formatting and linting (`ruff` / `mypy`)
+- [x] Document README with API specs, OpenAPI schema, and database setup instructions

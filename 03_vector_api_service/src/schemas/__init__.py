@@ -2,7 +2,7 @@
 
 from .chunk_dto import ArtifactType, ChunkBatchRequest, ChunkBatchResponse, ChunkCreate
 from .document_dto import DocumentCreate, DocumentResponse
-from .search_dto import SearchQuery, SearchResult, SearchResponse
+from .search_dto import SearchQuery, SearchResponse, SearchResult
 
 __all__ = [
     "ArtifactType",

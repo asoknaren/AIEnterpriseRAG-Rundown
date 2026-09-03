@@ -3,7 +3,13 @@
 from abc import ABC, abstractmethod
 from uuid import UUID
 
-from src.schemas import ChunkCreate, DocumentCreate, DocumentResponse, SearchQuery, SearchResult
+from src.schemas import (
+    ChunkCreate,
+    DocumentCreate,
+    DocumentResponse,
+    SearchQuery,
+    SearchResult,
+)
 
 
 class BaseVectorRepository(ABC):

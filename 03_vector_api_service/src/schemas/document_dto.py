@@ -1,6 +1,6 @@
 """Document registration request and response schemas."""
 
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from uuid import UUID
 
 from pydantic import BaseModel, Field
@@ -21,5 +21,5 @@ class DocumentCreate(BaseModel):
 class DocumentResponse(DocumentCreate):
     """Persisted document metadata returned by the API."""
 
-    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
-    updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))  # noqa: UP017
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))  # noqa: UP017

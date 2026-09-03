@@ -3,10 +3,22 @@
 from typing import Any
 from uuid import UUID
 
-from qdrant_client.models import FieldCondition, Filter, MatchAny, MatchValue, PointStruct
+from qdrant_client.models import (
+    FieldCondition,
+    Filter,
+    MatchAny,
+    MatchValue,
+    PointStruct,
+)
 
 from src.db.base import BaseVectorRepository
-from src.schemas import ChunkCreate, DocumentCreate, DocumentResponse, SearchQuery, SearchResult
+from src.schemas import (
+    ChunkCreate,
+    DocumentCreate,
+    DocumentResponse,
+    SearchQuery,
+    SearchResult,
+)
 
 
 class QdrantVectorRepository(BaseVectorRepository):
@@ -47,7 +59,7 @@ class QdrantVectorRepository(BaseVectorRepository):
         return 0 if result is None else 1
 
     async def search_similar_chunks(self, query_vector: list[float], query: SearchQuery) -> list[SearchResult]:
-        conditions = []
+        conditions: list[Any] = []
         if query.doc_id:
             conditions.append(FieldCondition(key="doc_id", match=MatchValue(value=str(query.doc_id))))
         if query.artifact_types:
