@@ -52,7 +52,7 @@
 - [x] Quality Gate: `pytest --cov=src tests/` >= 90% pass (verified: 92%; Ruff and mypy pass)
 
 ### Phase 3: Project 2 - Ingestion Loader (`02_ingestion_loader`)
-- [ ] Task 2.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)
+- [x] Task 2.1: Scaffolding & Config (`src/config.py`) -> **Test Gate**: `tests/test_config.py` (Pass)
 - [ ] Task 2.2: Async HTTP Client with Retries (`src/client/`) -> **Test Gate**: `tests/test_client*.py` (Pass)
 - [ ] Task 2.3: Batch Loader & Deduplication (`src/loader.py`) -> **Test Gate**: `tests/test_loader.py` (Pass)
 - [ ] Task 2.4: Typer / Rich CLI Interface (`src/cli.py`) -> **Test Gate**: `tests/test_cli.py` (Pass)

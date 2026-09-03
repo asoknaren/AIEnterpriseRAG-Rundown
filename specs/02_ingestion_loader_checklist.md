@@ -7,17 +7,17 @@
 ---
 
 ## 1. Environment & Project Scaffolding
-- [ ] Initialize `02_ingestion_loader/` directory structure (`src/`, `tests/`)
-- [ ] Create `pyproject.toml` or `requirements.txt` with dependencies:
+- [x] Initialize `02_ingestion_loader/` directory structure (`src/`, `tests/`)
+- [x] Create `pyproject.toml` or `requirements.txt` with dependencies:
   - `httpx>=0.25.0`
   - `typer>=0.9.0`
   - `rich>=13.0.0`
   - `pydantic>=2.0`
   - `pytest`, `pytest-asyncio`, `respx` / `pytest-httpx`
-- [ ] Create `src/config.py` with Pydantic BaseSettings (Target API base URL, batch size, timeout, max retries)
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_config.py` to verify configuration settings, URL validation, and environment loading
-  - [ ] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
+- [x] Create `src/config.py` with Pydantic BaseSettings (Target API base URL, batch size, timeout, max retries)
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_config.py` to verify configuration settings, URL validation, and environment loading
+  - [x] Run `pytest tests/test_config.py` and ensure 100% pass before proceeding
 
 ## 2. API Client Implementation (`src/client/`)
 - [ ] Implement `VectorApiClient` in `src/client/api_client.py`:
