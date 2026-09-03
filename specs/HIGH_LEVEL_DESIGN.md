@@ -252,7 +252,7 @@ CREATE TABLE IF NOT EXISTS document_chunks (
     artifact_type VARCHAR(32) NOT NULL, -- 'raw_chunk', 'contextual_chunk', 'raptor_summary', 'qa_pair', 'factoid', 'summary'
     content TEXT NOT NULL,
     raw_content TEXT,
-    embedding vector(768), -- Dimension configured based on embedding model (e.g. 768, 1536)
+    embedding vector(1536), -- Dimension configured based on embedding model
     metadata JSONB DEFAULT '{}'::jsonb,
     created_at TIMESTAMPTZ DEFAULT NOW()
 );

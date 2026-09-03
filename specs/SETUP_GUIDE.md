@@ -97,7 +97,7 @@ ollama serve &
 Run the following commands in your terminal to download the recommended on-premise models:
 
 ```bash
-# 1. Embedding Model (768-dimensional)
+# 1. Example local embedding model (set EMBEDDING_DIMENSION to its native size)
 ollama pull nomic-embed-text
 
 # 2. Derivative Artifact Generators & Synthesis LLMs
@@ -149,7 +149,7 @@ QDRANT_COLLECTION_NAME=enterprise_docs_chunks
 # ==============================================================================
 EMBEDDING_PROVIDER=ollama                     # 'ollama', 'fastembed', or 'openai'
 EMBEDDING_MODEL=nomic-embed-text              # e.g., 'nomic-embed-text' or 'text-embedding-3-small'
-EMBEDDING_DIMENSION=768                       # 768 for nomic-embed-text, 1536 for OpenAI small
+EMBEDDING_DIMENSION=1536                      # Default size; must match the selected embedding model
 
 # ==============================================================================
 # Ollama Local LLM Configuration

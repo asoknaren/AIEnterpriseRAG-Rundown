@@ -12,8 +12,9 @@ def test_default_settings_match_local_service_configuration():
     assert config.vector_db_backend == "postgres"
     assert config.postgres_dsn == "postgresql://postgres:postgrespassword@localhost:5432/ragdb"
     assert config.qdrant_url == "http://localhost:6333"
-    assert config.embedding_provider == "ollama"
-    assert config.embedding_dimension == 768
+    assert config.embedding_provider == "openai"
+    assert config.embedding_model == "text-embedding-3-small"
+    assert config.embedding_dimension == 1536
 
 
 def test_environment_overrides_support_qdrant_and_openai(monkeypatch):
@@ -22,14 +23,20 @@ def test_environment_overrides_support_qdrant_and_openai(monkeypatch):
     monkeypatch.setenv("QDRANT_HOST", "qdrant.internal")
     monkeypatch.setenv("QDRANT_PORT", "6334")
     monkeypatch.setenv("EMBEDDING_PROVIDER", "openai")
-    monkeypatch.setenv("EMBEDDING_DIMENSION", "1536")
+    monkeypatch.setenv("EMBEDDING_MODEL", "text-embedding-3-large")
 
     config = VectorApiSettings()
 
     assert config.vector_db_backend == "qdrant"
     assert config.qdrant_url == "http://qdrant.internal:6334"
     assert config.embedding_provider == "openai"
-    assert config.embedding_dimension == 1536
+    assert config.embedding_dimension == 3072
+
+
+def test_embedding_model_must_be_supported_by_its_provider():
+    """Prevent model and vector dimensions from being mixed across providers."""
+    with pytest.raises(ValidationError, match="not supported by provider"):
+        VectorApiSettings(embedding_provider="ollama", embedding_model="text-embedding-3-small")
 
 
 @pytest.mark.parametrize(
@@ -37,6 +44,7 @@ def test_environment_overrides_support_qdrant_and_openai(monkeypatch):
     [
         {"vector_db_backend": "unsupported"},
         {"embedding_provider": "unsupported"},
+        {"embedding_model": "unsupported"},
         {"postgres_min_connections": 21, "postgres_max_connections": 20},
         {"postgres_port": 0},
     ],

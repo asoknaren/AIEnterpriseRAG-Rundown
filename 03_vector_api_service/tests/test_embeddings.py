@@ -81,19 +81,25 @@ async def test_embedding_service_rejects_invalid_vector_dimensions():
 def test_factory_selects_configured_provider():
     assert isinstance(
         EmbeddingFactory.create(
-            VectorApiSettings(embedding_provider="ollama", embedding_dimension=2), FakeOllamaClient()
+            VectorApiSettings(embedding_provider="ollama", embedding_model="nomic-embed-text"), FakeOllamaClient()
         ),
         OllamaEmbeddingService,
     )
     assert isinstance(
         EmbeddingFactory.create(
-            VectorApiSettings(embedding_provider="fastembed", embedding_dimension=2), FakeFastEmbedClient()
+            VectorApiSettings(
+                embedding_provider="fastembed", embedding_model="BAAI/bge-small-en-v1.5"
+            ),
+            FakeFastEmbedClient(),
         ),
         FastEmbedService,
     )
     assert isinstance(
         EmbeddingFactory.create(
-            VectorApiSettings(embedding_provider="openai", embedding_dimension=2), FakeOpenAIClient()
+            VectorApiSettings(
+                embedding_provider="openai", embedding_model="text-embedding-3-small"
+            ),
+            FakeOpenAIClient(),
         ),
         OpenAIEmbeddingService,
     )
