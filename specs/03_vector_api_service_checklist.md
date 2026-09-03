@@ -62,14 +62,14 @@
   - [x] Run `pytest tests/test_db_*.py tests/test_architecture_rules.py` and ensure 100% pass before proceeding
 
 ## 4. Embedding Engine Layer (`src/embeddings/`)
-- [ ] Define `BaseEmbeddingService` abstract interface in `src/embeddings/base.py`
-- [ ] Implement `OllamaEmbeddingService` (`src/embeddings/ollama_embed.py`)
-- [ ] Implement `FastEmbedService` (`src/embeddings/fastembed_embed.py`)
-- [ ] Implement `OpenAIEmbeddingService` (`src/embeddings/openai_embed.py`)
-- [ ] Implement `EmbeddingFactory` in `src/embeddings/factory.py`
-- [ ] **Verification & Test Gate**:
-  - [ ] Write `tests/test_embeddings.py` testing dimension checking, batch embedding generation, and error handling
-  - [ ] Run `pytest tests/test_embeddings.py` and ensure 100% pass before proceeding
+- [x] Define `BaseEmbeddingService` abstract interface in `src/embeddings/base.py`
+- [x] Implement `OllamaEmbeddingService` (`src/embeddings/ollama_embed.py`)
+- [x] Implement `FastEmbedService` (`src/embeddings/fastembed_embed.py`)
+- [x] Implement `OpenAIEmbeddingService` (`src/embeddings/openai_embed.py`)
+- [x] Implement `EmbeddingFactory` in `src/embeddings/factory.py`
+- [x] **Verification & Test Gate**:
+  - [x] Write `tests/test_embeddings.py` testing dimension checking, batch embedding generation, and error handling
+  - [x] Run `pytest tests/test_embeddings.py` and ensure 100% pass before proceeding
 
 ## 5. FastAPI REST API Routers (`src/api/`)
 - [ ] Implement **Document Endpoints** (`src/api/v1/documents.py`):
